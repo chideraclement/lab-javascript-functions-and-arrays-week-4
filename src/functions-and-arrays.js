@@ -16,7 +16,7 @@ function maxOfTwoNumbers(numOne, numTwo) {
 
 }
 
-console.log(maxOfTwoNumbers(5, 10));
+maxOfTwoNumbers(5, 10);
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
@@ -49,28 +49,28 @@ function sumNumbers(sumArray) {
 // Iteration #3.1 Bonus:
 const mixedArr = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
 
+const mixedArr = [6, 12, "miami", 1, true, "barca", "200", "lisboa", 8, 10];
 function sum(array) {
   let mixedTotalSum = 0;
   for (let i = 0; i < array.length; i++) {
+    // Here if we get a string, we will split that string and add each position of thespliitedStirng into the mixedTotalSum !
     if (typeof array[i] === "string") {
-      mixedTotalSum += array[i].length;
-    } else if (typeof array[i] === 'boolean') {
-      mixedTotalSum += Number(array[i]);
-    }
+      let string = array[i].split("");
+      // we will be addsing each position of the string as a numeric value to the mixedTotalSum
       for (let i = 0; i < string.length; i++) {
         mixedTotalSum += string[i].length;
       }
-}
-
-else if (array[i] === true) {
-  mixedTotalSum += 1;
-}
-else if (typeof array[i] === "object" || typeof array[i] === "array") {
-  throw new Error(
-    "no no, we will not count any arrays or objects into consideration....."
-  );
-} else {
-  mixedTotalSum += array[i];
+    } // for booleans we will create a else-if condition, thatn will cehck the boolean data and if is true we will add +1 to the count
+    else if (array[i] === true) {
+      mixedTotalSum += 1;
+    } // conndiiton if we get an obnject or array inside, what do we do ? , in those cases we will generate an error and not take into account for the sum!
+    else if (typeof array[i] === "object" || typeof array[i] === "array") {
+      throw new Error(
+        "no no, we will not count any arrays or objects into consideration....."
+      );
+    } else {
+      // addding each inidivual possition of the array to the count!
+      mixedTotalSum += array[i];
     }
   }
   console.log(mixedTotalSum);
@@ -291,9 +291,6 @@ function greatestProduct(matrix) {
 
   return maxProduct;
 }
-   
-
-console.log(greatestProduct
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
